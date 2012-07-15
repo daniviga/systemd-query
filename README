@@ -1,0 +1,16 @@
+Small wrapper to simplify enabling and disabling systemd services.
+
+Installation:
+- Copy the script to a directory in system PATH (/usr/local/sbin/ is recommended)
+- Make the script executable by root
+
+Usage:
+- list (all | enabled | disabled)
+- enable | disable
+- start | stop | restart | status
+
+Requirements:
+- systemd
+- BASH >= 4.0
+
+Tested on Fedora 17
