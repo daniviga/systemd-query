@@ -1,6 +1,11 @@
 #!/bin/bash
 
 # Require BASH >= 4.0
+if [ $BASH_VERSINFO -lt 4 ];
+then
+	echo "BASH >= 4.0 is required."
+	exit 1
+fi
 
 list() {
 	
