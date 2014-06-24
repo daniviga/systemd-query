@@ -13,4 +13,4 @@ Requirements:
 - systemd
 - BASH >= 4.0
 
-Tested on Fedora 17
+Tested on Fedora >= 17
