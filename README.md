@@ -8,8 +8,8 @@ A small wrapper to simplify enabling and disabling systemd services.
 - Make the script executable by root
 
 ```bash
-wget -O- https://github.com/daniviga/systemd-query/blob/master/systemd-query | sudo tee /usr/local/sbin/systemd-query
-sudo chmod +x /usr/local/sbin/systemd-query
+$ wget -O- https://github.com/daniviga/systemd-query/blob/master/systemd-query | sudo tee /usr/local/sbin/systemd-query
+$ sudo chmod +x /usr/local/sbin/systemd-query
 ```
 
 ### Usage:
