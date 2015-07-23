@@ -1,24 +1,37 @@
 #!/bin/bash
+# Copyright (c) 2015, Daniele Viganò (daniele@vigano.me)
+#
+# gobigps is free software: you can redistribute it and/or modify it
+# under the terms of the GNU Affero General Public License as published
+# by the Free Software Foundation, either version 3 of the License, or
+# (at your option) any later version.
+#
+# gobigps is distributed in the hope that it will be useful,
+# but WITHOUT ANY WARRANTY; without even the implied warranty of
+# MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+# GNU General Public License for more details.
+#
+# You should have received a copy of the GNU Affero General Public License
+# along with gobigps. If not, see <http://www.gnu.org/licenses/>.
 
-# Require BASH >= 4.0
+# Requires BASH >= 4.0
 if [ $BASH_VERSINFO -lt 4 ];
 then
-    echo "BASH >= 4.0 is required."
+    echo "Error: BASH >= 4.0 is required."
     exit 1
 fi
 
 list() {
-
     command="systemctl list-unit-files --type=service"
 
     case $1 in
-    enabled | disabled)
+    'enabled' | 'disabled')
         $command | grep $1 | less;;
-    all)
-        $command | less;;
-    *)
-        echo "Usage: $0 list (enabled | disabled | all)"
+    '?')
+        echo "Usage: $0 list [enabled | disabled | all]"
         exit 1;;
+    * | 'all')
+        $command;;
     esac
 }
 
@@ -36,7 +49,7 @@ onoff() {
             exit 1
         fi
     else
-        echo -e "Usage: $0 ( start | stop | restart | status) \e[01;31mservice\e[0m"
+        echo -e "Usage: $0 <start | stop | restart | status> \e[01;31mservice\e[0m"
         exit 1
     fi
 }
@@ -47,6 +60,6 @@ list)
 enable | disable | start | stop | restart | status)
     onoff $1 $2;;
 *)
-    echo "Usage: $0 (list | enable | disable | start | stop | restart | status)";;
+    echo "Usage: $0 <list [enabled | disabled | all ] | enable <service> | disable <service> | start <service> | stop <service> | restart <service> | status <service>>";;
 esac
 exit 0
