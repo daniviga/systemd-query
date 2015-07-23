@@ -4,7 +4,7 @@ A small wrapper to simplify enabling and disabling systemd services.
 
 ### Installation:
 
-- Download the script into a directory in system PATH (/usr/local/sbin/ is recommended)
+- Download the script into a directory in system PATH (`/usr/local/sbin/` is recommended)
 - Make the script executable by root
 
 ```bash
