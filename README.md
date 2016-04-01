@@ -14,8 +14,8 @@ $ sudo chmod +x /usr/local/sbin/systemd-query
 
 ### Usage:
 - list [enabled | disabled | all]
-- enable <service> | disable <service>
-- start <service> | stop <service> | restart <service> | status <service>
+- enable \<service\> | disable \<service\>
+- start \<service\> | stop \<service\> | restart \<service\> | status \<service\>
 
 ### Requirements:
 - systemd
